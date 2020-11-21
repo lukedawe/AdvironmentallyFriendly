@@ -6,13 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+    <com.google.android.gms.ads.AdView
+        ads:adSize="BANNER"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/ad_view1"
+        tools:layout_editor_absoluteX="45dp"
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        tools:layout_editor_absoluteY="114dp"
+        ads:adUnitID="ca-app-pub-6656617771861002/4030841247"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
