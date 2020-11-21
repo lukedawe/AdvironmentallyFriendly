@@ -25,9 +25,9 @@ public class MainActivity extends AppCompatActivity {
 
         mSlideViewPager = (ViewPager) findViewById(R.id.slideViewPager);
 
-        slider = new Slider(this);
+        //slider = new Slider(this);
 
-        mSlideViewPager.setAdapter(slider);
+        //mSlideViewPager.setAdapter(slider);
 
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
