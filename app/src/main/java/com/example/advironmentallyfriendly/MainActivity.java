@@ -1,42 +1,41 @@
-package com.example.advironmentallyfriendly;
+package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.ViewPager;
-
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.initialization.InitializationStatus;
-import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 
 import android.os.Bundle;
-import android.widget.LinearLayout;
+import android.widget.ImageView;
+import android.widget.ViewFlipper;
 
 public class MainActivity extends AppCompatActivity {
 
-    private AdView mAdView;
-    private ViewPager mSlideViewPager;
+    ViewFlipper v_flipper;
 
-    private Slider slider;
-
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mSlideViewPager = (ViewPager) findViewById(R.id.slideViewPager);
+        // Images in drawable
+        int images[] = {R.drawable.group1,R.drawable.group2,R.drawable.group3};
 
-        //slider = new Slider(this);
+        v_flipper= findViewById(R.id.v_flipper);
 
-        //mSlideViewPager.setAdapter(slider);
+        for(int image: images){
 
-        MobileAds.initialize(this, new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {
-            }
-        });
-
-        mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+            flipperImages(image);
+        }
     }
+    public void flipperImages(int image){
+        ImageView imageView = new ImageView(this);
+        imageView.setBackgroundResource(image);
+
+        v_flipper.addView(imageView);
+        // Changes every X seconds so change this number
+        v_flipper.setFlipInterval(1000);
+        v_flipper.setAutoStart(true);
+        v_flipper.setInAnimation(this,android.R.anim.slide_in_left);
+        v_flipper.setOutAnimation(this,android.R.anim.slide_out_right);
+
+    }
+
 }
