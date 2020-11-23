@@ -11,7 +11,7 @@
         android:theme="@style/Theme.MyApplication">
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-6620968219229356~4631468869"/>
+            android:value="ca-app-pub-6656617771861002~8266627394"/>
 
         <activity android:name=".MainActivity">
             <intent-filter>
